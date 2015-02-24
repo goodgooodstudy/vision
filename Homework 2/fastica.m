@@ -28,9 +28,10 @@ function [W, A] = fastica(data, numics)
             c = 1-tanh(a).^2;
 
             wt_p = (1/n)*X_tilda*tanh(b)-(1/n)*(c*ones(n,1))*wt_p;
-
+            
+            %update W with row order
             for j=1:(p-1)
-                wt_p = wt_p - wt_p.'* W_tilda(:,j)*W_tilda(:,j);
+                wt_p = wt_p -  W_tilda(j,:).'*W_tilda(j,:)*wt_p;
             end
 
             wt_p = wt_p/norm(wt_p);
