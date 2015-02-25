@@ -13,7 +13,6 @@ function [W, A] = fastica(data, numics)
     [U,S,V] = svd(X_hat,'econ');
     X_tilda = sqrt(n-1) * (V.');
     W_tilda = zeros(numics,d);
-    p=0;
     if numics == 1
         i=0;
         while 1
@@ -36,25 +35,23 @@ function [W, A] = fastica(data, numics)
             end
         end
     else
-        for component = 1:numics
+        for p = 1:numics
             i=0;
             while 1
-                fprintf('%d iteration %d\n ',component, i);
+                fprintf('%d iteration %d\n ',p i);
                 wt = rand(d,1);
 
                 a = X_tilda.'*wt;          
                 g = tanh(a);
                 b = wt.'*X_tilda;
                 g_prime = 1-tanh(b).^2;
-                
-                
+
                 wt_plus = X_tilda*g - (g_prime*ones(n,1))*wt;
-                wt_plus = wt_plus - p*wt_plus;
                 wt_next = wt_plus / norm(wt_plus);
+                
                 i=i+1;
                 if i > 1000 || (abs(wt_next.'*wt) > (1-10^-9))
-                    p = p + wt_next * wt_next.';
-                    W_tilda = wt_next.';
+                    W_tilda(p,:) = wt_next.';
                     break;
                 end 
             end
