@@ -2,65 +2,48 @@ function [W, A] = fastica(data, numics)
     X = data;
     d = size(X,1);
     n = size(X,2);
+    mean = zeros(d,1);
     X_hat = zeros(size(X));
 
     %demean the sample X
     for i=1:d
-        X_hat(i,:) = X(i,:) - mean2(X(i,:))*ones(size(X(i,:)));
+        mean(i,1)=sum(X(i,:))/n;
+        X_hat(i,:) = X(i,:) - mean(i,1);
     end
 
     %whiten the data
     [U,S,V] = svd(X_hat,'econ');
     X_tilda = sqrt(n-1) * (V.');
+
     W_tilda = zeros(numics,d);
-    p=0;
-    if numics == 1
+
+    %find numics rows of wt_p for the whitened data
+    for p = 1:numics
+        wt_p = rand(d,1); %randomize the wt_p
         i=0;
         while 1
-            fprintf('iteration %d\n ', i);
+            wt_prev = wt_p;
+            a = wt_p.'*X_tilda;
+            b = X_tilda.'*wt_p;
+            c = 1-tanh(a).^2;
 
-            wt = rand(d,1); %randomize the w
+            wt_p = (1/n)*X_tilda*tanh(b)-(1/n)*(c*ones(n,1))*wt_p;
             
-            a = X_tilda.'*wt;
-            g = tanh(a);
-            b = wt.'*X_tilda;
-            g_prime = 1-tanh(b).^2;
-            
-            wt_plus = X_tilda*g - (g_prime*ones(n,1))*wt;
-            wt_next = wt_plus / norm(wt_plus);
-            display((abs(wt_next.'*wt)));
+            %update W with row order
+            for j=1:(p-1)
+                wt_p = wt_p -  W_tilda(j,:).'*W_tilda(j,:)*wt_p;
+            end
+
+            wt_p = wt_p/norm(wt_p);
+
+            if i > 1000 || (abs(wt_p.'*wt_prev) > (1-10^-9))
+                break; 
+            end
             i=i+1;
-            if i > 1000 || (abs(wt_next.'*wt) > (1-10^-9))
-                W_tilda = wt_next.';
-                break;
-            end
         end
-    else
-        for component = 1:numics
-            i=0;
-            while 1
-                fprintf('%d iteration %d\n ',component, i);
-                wt = rand(d,1);
-
-                a = X_tilda.'*wt;          
-                g = tanh(a);
-                b = wt.'*X_tilda;
-                g_prime = 1-tanh(b).^2;
-                
-                
-                wt_plus = X_tilda*g - (g_prime*ones(n,1))*wt;
-                wt_plus = wt_plus - p*wt_plus;
-                wt_next = wt_plus / norm(wt_plus);
-                i=i+1;
-                if i > 1000 || (abs(wt_next.'*wt) > (1-10^-9))
-                    p = p + wt_next * wt_next.';
-                    W_tilda = wt_next.';
-                    break;
-                end 
-            end
-        end
+        W_tilda(p,:) = wt_p.';
     end
-    
+
     %recover W and A from W_tilda
     M = ((1/sqrt(n-1))*U*S)^-1;
     W = W_tilda*M;
