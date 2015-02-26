@@ -13,10 +13,13 @@ function [W, A] = fastica(data, numics)
     [U,S,V] = svd(X_hat,'econ');
     X_tilda = sqrt(n-1) * (V.');
     W_tilda = zeros(numics,d);
+    p=0;
+    
+    %fast ICA for single component
     if numics == 1
         i=0;
         while 1
-            fprintf('iteration %d\n ', i);
+%             fprintf('iteration %d\n ', i);
 
             wt = rand(d,1); %randomize the w
             
@@ -34,28 +37,35 @@ function [W, A] = fastica(data, numics)
                 break;
             end
         end
+    %fast ICA for multiple components
     else
-        for p = 1:numics
+        for component = 1:numics
             i=0;
             while 1
-                fprintf('%d iteration %d\n ',p i);
+%                 fprintf('%d iteration %d\n ',component, i);
                 wt = rand(d,1);
 
                 a = X_tilda.'*wt;          
                 g = tanh(a);
                 b = wt.'*X_tilda;
                 g_prime = 1-tanh(b).^2;
-
-                wt_plus = X_tilda*g - (g_prime*ones(n,1))*wt;
-                wt_next = wt_plus / norm(wt_plus);
                 
+                
+                wt_plus = X_tilda*g - (g_prime*ones(n,1))*wt;
+                display(wt_plus);
+                display(norm(wt_plus));
+             
+                wt_next = wt_plus ./ norm(wt_plus);
                 i=i+1;
                 if i > 1000 || (abs(wt_next.'*wt) > (1-10^-9))
-                    W_tilda(p,:) = wt_next.';
+                    p = p + wt_next * wt_next.';
+                    W_tilda(component,:) = wt_next.';
                     break;
                 end 
             end
         end
+        ortho = wt_plus -p*wt_plus;
+        display(ortho);
     end
     
     %recover W and A from W_tilda

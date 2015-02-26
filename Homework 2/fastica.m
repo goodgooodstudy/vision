@@ -14,12 +14,12 @@ function [W, A] = fastica(data, numics)
     X_tilda = sqrt(n-1) * (V.');
     W_tilda = zeros(numics,d);
     p=0;
+    
+    %fast ICA for single component
     if numics == 1
         i=0;
+        wt = rand(d,1); %randomize the w
         while 1
-            fprintf('iteration %d\n ', i);
-
-            wt = rand(d,1); %randomize the w
             
             a = X_tilda.'*wt;
             g = tanh(a);
@@ -28,20 +28,19 @@ function [W, A] = fastica(data, numics)
             
             wt_plus = X_tilda*g - (g_prime*ones(n,1))*wt;
             wt_next = wt_plus / norm(wt_plus);
-            display((abs(wt_next.'*wt)));
             i=i+1;
-            if i > 1000 || (abs(wt_next.'*wt) > (1-10^-9))
+            if i > 1000 && (abs(wt_next.'*wt) > (1-10^-9))
                 W_tilda = wt_next.';
                 break;
             end
         end
+    %fast ICA for multiple components
     else
         for component = 1:numics
+%           fprintf('component %d\n',component);
             i=0;
+            wt = rand(d,1);
             while 1
-                fprintf('%d iteration %d\n ',component, i);
-                wt = rand(d,1);
-
                 a = X_tilda.'*wt;          
                 g = tanh(a);
                 b = wt.'*X_tilda;
@@ -51,12 +50,15 @@ function [W, A] = fastica(data, numics)
                 wt_plus = X_tilda*g - (g_prime*ones(n,1))*wt;
                 wt_plus = wt_plus - p*wt_plus;
                 wt_next = wt_plus / norm(wt_plus);
+
                 i=i+1;
-                if i > 1000 || (abs(wt_next.'*wt) > (1-10^-9))
+                if i > 1000 && (abs(wt_next.'*wt) > (1-10^-9))
                     p = p + wt_next * wt_next.';
-                    W_tilda = wt_next.';
+                    W_tilda(component,:) = wt_next.';
                     break;
                 end 
+                
+                wt = wt_next;
             end
         end
     end
