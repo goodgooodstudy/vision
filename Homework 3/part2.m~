@@ -1,0 +1,25 @@
+%clear workspace
+clear all
+close all
+
+load gaussian.mat
+
+XS = gaussian;
+XC = XS;
+%center XS
+for i=1:size(XS,1)
+    xMean = mean(XS(i,:));
+    display(x
+    XC(i,:) = XS(i,:) -  xMean;
+end
+
+m = 2;
+[U,S,V] = svds(XC,m);
+
+varEst = (diag(S).^2)./(size(XC,2)-1);
+
+
+figure;
+scatter(XS(1,:),XS(2,:));
+hold on;
+quiver(U(:,1),U(:,2),0);
