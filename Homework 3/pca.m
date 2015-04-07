@@ -7,7 +7,6 @@ function [ components, variances ] = pca(XS, m)
     end
     
     %calculate SVD with m sigular values and principle components
-    m = 2;
     [U,S,V] = svds(XC,m);
     
     %convert singular values retured in step2 into variance estimates

@@ -1,0 +1,20 @@
+%clear workspace
+clear all
+close all
+
+load spiral.mat
+
+xs = spiral;
+sigma = 1;
+pwdists2 = bsxfun(@plus, dot(xs,xs)', dot(xs,xs)) - 2*(xs'*xs);
+
+W = exp(-pwdists2./(2*sigma^2));
+
+%get the row sum of W
+D = sum(W,2);
+
+%make it diagonal matrix
+D = diag(D');
+
+%constract M
+M = (inv(D)) * W;
