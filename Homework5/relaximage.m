@@ -7,9 +7,9 @@ P=cat(3,Pobject,Pbackground);
 
 % get total number of nodes (pixels), and total number of labels (object &
 % bacnground
-nodeSize=size(A); 
+nodeSize=size(P); 
 labelSize=2;
-
+realLabel =[];
 pixels= nodeSize(1)*nodeSize(2); % total number of pixels
 
 % we have 8 neighbours ex: (n1-n8), and origin is N0)
@@ -57,11 +57,11 @@ R(R>exp(a))=exp(a);
 R=log(R)/a;
 
 % Perform relaxation
-b=0; E=zeros(1,opt(3)); thr=0;
+b=0; %E=zeros(1,niters); thr=0;
 
 while true
     
-    b=b+1; Lo=L;
+    b=b+1;
     
     % Compute neighbourhood (as opposed to neighbour) compatibilities
     Q=zeros(size(P));
@@ -74,19 +74,15 @@ while true
     
     % Update the probabilities
     P=P.*(1+Q/neighbours);
-    if opt(2)>(1+eps), P=P.^opt(2); end
+    % if opt(2)>(1+eps), P=P.^opt(2); end
     P=bsxfun(@rdivide,P,sum(P,3));
 
     % Crop
     P=P(2:end-1,2:end-1,:);
+
+    [~,realLabel]=max(P,[],3);
     
-    % Check for convergence
-    [~,L]=max(P,[],3);
-    E(i)=sum(L(:)~=Lo(:));
-    
-    %disp(E(i))
-    if E(i)==0, thr=thr+1; end
-    if b>=niters ||  thr==3
+    if b>=niters 
         break; 
     end
     
@@ -94,5 +90,5 @@ while true
     P=padarray(P,[1 1 0],'replicate');
 
 end
-relaxed=L;
+relaxed=realLabel;
 

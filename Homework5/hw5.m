@@ -19,7 +19,7 @@ Pbackground=1-Pobject;
 
 P=cat(3,Pobject,Pbackground);
 
-L=RelaxLabel2D(P,[],[2 1 150]);
+L=relaximage(img, 5);
 L=L==1;
 PSNR=-10*log10(mean(abs(double(img(:))-double(L(:)))));
 
