@@ -1,0 +1,42 @@
+%clear workspace
+clear all
+close all
+
+imgName = 'cactus.png';
+
+% Read in the image
+img=imread(imgName);
+%display the input image
+figure('color','w','units','normalized','position',[0.1 0.1 0.8 0.8])
+subplot(2,2,1)
+imshow(img)
+set(get(gca,'title'),'String','ORIGINAL','FontSize',20)
+
+img = double(img)/255;
+%img=imfilter(double(img),fspecial('gaussian',9,3));
+idx=img<=0.5; % pixels whose neighbourhood mean is less than 0.5
+
+Pbackground=zeros(size(img)); % prob of belonging to the background
+Pobject=zeros(size(img)); % prob of belonging to the foreground
+
+Pobject(idx)=0.7;
+Pbackground(idx)=0.3;
+
+Pbackground(~idx)=0.7;
+Pobject(~idx)=0.3;
+
+Pobject(idx)=0.9;
+Pbackground(idx)=0.1;
+
+Pbackground(~idx)=0.;
+Pobject(~idx)=0.3;
+
+P=cat(3,Pobject,Pbackground);
+
+L=RelaxLabel2D(P,[],[2 1 5]);
+L=L==2;
+subplot(2,2,2)
+imshow(L)
+drawnow
+
+
