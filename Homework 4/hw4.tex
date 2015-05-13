@@ -142,8 +142,64 @@ This form will clearly reach optima as $cos(0)$ equal to 1.
 If $v$ is tangential to $r$, we can just move $v$ from viewsphere at $p$ to our surface $s$.  
 
 \subsection{Show $F_*(t)$ is orthogonal to $F_*(b)$}
+Given that $b = p \times t$, we know for sure that $b$ is orthogonal to $t$. 
 
+We have representation of $F_* (\pmb{t})$:
+\[F_* (\pmb{t}) = \nabla r \pmb{p} + r\;\pmb{t}\]
+Since $F_*$ is a tangent map from viewsphere to the surface, and $F_*(\pmb{t})$signifies the direction it is moving, when $t = \nabla \; r / \| \nabla \; r \|$, $F_*$ is moving tangentially to the surface. \\
+Similarly, $F_*(b)$ is moving in the direction of $b$. 
+Since $b$ is orthogonal to $t$, we can say that $F_*(t)$ is orthogonal to $F_*(b)$.
 
+\subsection{Show N = T x B}
+Given $\pmb{T}$, $\pmb{B}$, and $\pmb{t}$ as described, 
+\[N = \pmb{T} \times \pmb{B}\]
+We know that:
+\[F_*(t) = \nabla r \; \pmb{p} + r \; \pmb{t}\]
+\[F_*(b) = \nabla r \; \pmb{p} + r \; \pmb{b}\]
+We also know that:
+\[\pmb{b} = \pmb{p} \times \pmb{t} = \|\pmb{p}\| \; \|\pmb{t}\| \; sin(\pi/2)
+ = \|\pmb{p}\| \; \|\pmb{t}\| \]
+ Therefore, we have:
+ \[F_*(t) \times  F_*(b) = (\nabla r \; \pmb{p} + r \; \pmb{t}) \times (\nabla r \; \pmb{p} + r  \|\pmb{p}\| \; \|\pmb{t}\|)\] 
+ Since $\pmb{p}$ and $\pmb{t}$ are unite vectors, their norm is 1. 
+ \[F_*(t) \times  F_*(b) = (\nabla r \; \pmb{p} + r \; \pmb{t}) \times (\nabla r \; \pmb{p} + r)\] 
+ \[=\|\nabla r \; \pmb{p} + r\; \pmb{t}\| \;\|\nabla r \pmb{p}+r\|\]
+ \[=\|\nabla r\| \; \pmb{t} + r \pmb{p}\]
+Since $t$ and $p$ are unit vectors, the norm of them are going to be 1, hence:
+\[\|F_*(t) \times  F_*(b)\| = \sqrt{\| \nabla \; r\|^2 + r^2}\]
+\[\Rightarrow \pmb{N} = \frac{\|\nabla r\| \; \pmb{t} + r \pmb{p}}{\sqrt{\| \nabla \; r\|^2 + r^2}}\]
 
+\subsection{examine the angle $\sigma$}
+Given:
+\[\pmb{N} = \frac{\|\nabla r\| \; \pmb{t} + r \pmb{p}}{\sqrt{\| \nabla \; r\|^2 + r^2}}\]
+Since $\pmb{N}$ and $\pmb{p}$ are unit vectors, norm of them are 1. Therefore, we have:
+\[sin\sigma = \|\pmb{N} \times \pmb{p}\|\]
+\[= \frac{(\|\nabla r\| \; \pmb{t} + r \pmb{p}) \times \pmb{p}}{\sqrt{\| \nabla \; r\|^2 + r^2}}\]
+We know that $\pmb{t} \times \pmb{p} = 1$ and $ \pmb{p} \times \pmb{p} = 0$, so 
+this yields to:
+\[\Rightarrow sin\sigma = \frac{(\|\nabla r\| }{\sqrt{\| \nabla \; r\|^2 + r^2}}\]
+We know that dot product of two orthogonal vectors is 0, and dot product of two identical vector is the 2 norm.\\ 
+\[ cos \sigma = \pmb{N} \cdot \pmb{p} = \frac{(\|\nabla r\| \; \pmb{t} + r \pmb{p}) \cdot \pmb{p}}{\sqrt{\| \nabla \; r\|^2 + r^2}}\]
+\[\Rightarrow cos \sigma = \frac{r}{\sqrt{\| \nabla \; r\|^2 + r^2}}\]
+With sin$\sigma$ and cos$\sigma$ solved, we can easily get tan $\sigma$:
+
+\[tan \sigma = \frac{sin \sigma}{cos \sigma}\]
+\[\Rightarrow tan \sigma = \frac{\| \nabla r\|}{r}\]
+
+\subsection{Discuss slant and tilt}
+It is much easier to show the distortion between the viewshere and our surface via slant and tilt. The angle, $\sigma$ acts as a map to convert $p$ and $t$ to $N$ and $T$. It is computationally much easier than using $\R^3$ coordinates.
+The ellipse in Figure 1 can be represented as a collection of $N$ and $T$ that is coverted via $\sigma$.
+
+\subsection{$F_*$}
+\[F_* = \nabla r \; \pmb{p} + r\; \pmb{t}\]
+\[= \nabla r \; (\pmb{t} \times \pmb{b}) + r\; \pmb{t}\]
+\[N = (\pmb{b} \times \pmb{t})cos\sigma - \pmb{t} sin \sigma\]
+\[T = (\pmb{b} \times \pmb{t}) sin\sigma +  \pmb{t} cos \sigma\]
+Sorry, I don't quite understand the question, I understand the panelty.\\
+\[ m = cos \sigma /r\]
+\[M = 1/r\]
+
+\subsection{t, b, m, and M}
+The larger M and m is, the more distortion we will obtain from viewsphere. 
 
 \end{document}

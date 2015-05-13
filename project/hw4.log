@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  5 MAY 2015 03:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  5 MAY 2015 23:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -339,169 +339,14 @@ LaTeX Info: Redefining \nameref on input line 75.
 \@outlinefile=\write3
 \openout3 = `hw4.out'.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 76--78
-
- []
-
-LaTeX Font Info:    Try loading font information for U+msa on input line 82.
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 82.
-
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 82.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\alpha' on input line 82.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 82.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 90--92
-
- []
-
-<scatter.jpg, id=52, 530.98375pt x 747.79375pt>
-File: scatter.jpg Graphic file (type jpg)
- <use scatter.jpg>
-Package pdftex.def Info: scatter.jpg used on input line 98.
-(pdftex.def)             Requested size: 341.43306pt x 480.85703pt.
-
-Underfull \vbox (badness 7064) has occurred while \output is active []
-
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 87.
  [1
 
 {/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<01.jpg, id=68, 562.1pt x 421.575pt>
-File: 01.jpg Graphic file (type jpg)
- <use 01.jpg>
-Package pdftex.def Info: 01.jpg used on input line 104.
-(pdftex.def)             Requested size: 341.43306pt x 256.07324pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [2pdfTeX warning (ext4): destination with the same identifier (name{figure.1})
- has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.107 
-       <./scatter.jpg>] <1.jpg, id=74, 562.1pt x 421.575pt>
-File: 1.jpg Graphic file (type jpg)
- <use 1.jpg>
-Package pdftex.def Info: 1.jpg used on input line 110.
-(pdftex.def)             Requested size: 341.43306pt x 256.07324pt.
-
-<10.jpg, id=75, 562.1pt x 421.575pt>
-File: 10.jpg Graphic file (type jpg)
- <use 10.jpg>
-Package pdftex.def Info: 10.jpg used on input line 116.
-(pdftex.def)             Requested size: 341.43306pt x 256.07324pt.
- [3pdfTeX warning (ext4): destination with the same identifier (name{figure.2})
- has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.119 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-3}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.119 
-       <./01.jpg> <./1.jpg>]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 123.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 123.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 123.
-
-[4pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) 
-has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.139 ... ( \nabla r / \| \nabla r \|) cos(0) \|\]
-                                                   <./10.jpg>]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 144.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 144.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 144.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 144.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 144.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 144.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 172.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\sigma' on input line 172.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 172.
-
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 180--182
-
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 193.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 193.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 193.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 197--199
-
- []
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 205.
-[6] [7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 205.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 87.
  (./hw4.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 205.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 205.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 87.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 87.
 
 
 Package rerunfilecheck Warning: File `hw4.out' has changed.
@@ -509,36 +354,24 @@ Package rerunfilecheck Warning: File `hw4.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `hw4.out':
-(rerunfilecheck)             Before: DB1068299718A969FE45AB1F7B796734;812
-(rerunfilecheck)             After:  C4082A94D29004D5F7E5FE13F403ACAD;876.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 205.
+(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
+(rerunfilecheck)             After:  A02D95553E30B97FF125B1AA17CF9044;47.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 87.
  ) 
 Here is how much of TeX's memory you used:
- 6474 strings out of 493117
- 91799 string characters out of 6135433
- 185742 words of memory out of 5000000
- 9842 multiletter control sequences out of 15000+600000
- 11204 words of font info for 44 fonts, out of 8000000 for 9000
+ 6360 strings out of 493117
+ 90364 string characters out of 6135433
+ 176638 words of memory out of 5000000
+ 9777 multiletter control sequences out of 15000+600000
+ 4850 words of font info for 18 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 29i,5n,31p,353b,330s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
-/usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></u
-sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr
-/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/l
-ocal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loc
-al/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local
-/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/te
-xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
-live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texli
-ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive
-/2014/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on hw4.pdf (7 pages, 201407 bytes).
+ 29i,4n,28p,236b,320s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+Output written on hw4.pdf (1 page, 22882 bytes).
 PDF statistics:
- 159 PDF objects out of 1000 (max. 8388607)
- 130 compressed objects within 2 object streams
- 25 named destinations out of 1000 (max. 500000)
- 117 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 22 PDF objects out of 1000 (max. 8388607)
+ 16 compressed objects within 1 object stream
+ 3 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

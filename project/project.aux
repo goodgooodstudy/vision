@@ -1,0 +1,35 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Datasets}{1}{section.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces  Fischer's iris flower dataset scatter plot. Each panel displays 2 features for 3 different species.The graph is referened from $http://en.wikipedia.org/wiki/Iris\_flower\_data\_set$ }}{2}{figure.1}}
+\newlabel{problem1Pic2}{{1}{2}{Fischer's iris flower dataset scatter plot. Each panel displays 2 features for 3 different species.The graph is referened from $http://en.wikipedia.org/wiki/Iris\_flower\_data\_set$}{figure.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces  Overian cancer dataset with bivirate fit of average amplitude with given samples. The plot is referenced from $http://home.ccr.cancer.gov/ncifdaproteomics/ppatterns.asp$ }}{3}{figure.2}}
+\newlabel{problem1Pic2}{{2}{3}{Overian cancer dataset with bivirate fit of average amplitude with given samples. The plot is referenced from $http://home.ccr.cancer.gov/ncifdaproteomics/ppatterns.asp$}{figure.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Implementation}{3}{section.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Benchmark}{4}{section.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces  This is the accuracy plot for iris flowers dataset, from what I can see, the accuracy reduecd dramaticly. I have anticipated accuracy drop from PCA. One of the possible reason is that the training set only has 120 observations, making the training less effective while the principle components are extracted. Also, since the PCA-only model does not have variables like total number of principle components to be extracted, I use constant SVM-Only results for simplicity.}}{4}{figure.3}}
+\newlabel{problem1Pic2}{{3}{4}{This is the accuracy plot for iris flowers dataset, from what I can see, the accuracy reduecd dramaticly. I have anticipated accuracy drop from PCA. One of the possible reason is that the training set only has 120 observations, making the training less effective while the principle components are extracted. Also, since the PCA-only model does not have variables like total number of principle components to be extracted, I use constant SVM-Only results for simplicity}{figure.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces  This is the execution time plot for iris flower dataset. I see negative speedups while using PCA. The main reason is that the original dataset only has 4 attributes, which makes raw data processing simple enough. }}{5}{figure.4}}
+\newlabel{problem1Pic2}{{4}{5}{This is the execution time plot for iris flower dataset. I see negative speedups while using PCA. The main reason is that the original dataset only has 4 attributes, which makes raw data processing simple enough}{figure.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces  This is the accuracy plot for Overian cancer patients, Though the accuracy still is much less than SVM-Only model, it is far better than the iris flowers case. Part of the reason is that this dataset has almost 200 training set. Nevertheless, the PCA still produces significant erros for the SVM model. Also, another drawback is that the extractable principle components are limited by total number of observations in the training set. We cannot extract, for example, 3000 principle components as we only have 200 training points, and that is also the reason for the errors. }}{5}{figure.5}}
+\newlabel{problem1Pic2}{{5}{5}{This is the accuracy plot for Overian cancer patients, Though the accuracy still is much less than SVM-Only model, it is far better than the iris flowers case. Part of the reason is that this dataset has almost 200 training set. Nevertheless, the PCA still produces significant erros for the SVM model. Also, another drawback is that the extractable principle components are limited by total number of observations in the training set. We cannot extract, for example, 3000 principle components as we only have 200 training points, and that is also the reason for the errors}{figure.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces  This is the time plot for Overian cancer patients. Unlike previous benchmarks, the time comparsion for the overian cancer shows advantages of PCA. As I reduce the number of principle components, the execution time drops rapidly. When the number of principle components is 3, the program has positve speedups against SVM-only model. }}{6}{figure.6}}
+\newlabel{problem1Pic2}{{6}{6}{This is the time plot for Overian cancer patients. Unlike previous benchmarks, the time comparsion for the overian cancer shows advantages of PCA. As I reduce the number of principle components, the execution time drops rapidly. When the number of principle components is 3, the program has positve speedups against SVM-only model}{figure.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{6}{section.5}}

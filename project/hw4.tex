@@ -1,0 +1,87 @@
+\documentclass[twoside]{article}
+
+\usepackage{amsmath,amsthm,amssymb,graphicx}
+\usepackage{hyperref}
+\usepackage[numbers]{natbib}
+\usepackage{float}
+\usepackage{bbm}
+
+\theoremstyle{definition}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newenvironment{pf}{{\noindent\sc Proof. }}{\qed}
+\newenvironment{map}{\[\begin{array}{cccc}} {\end{array}\]}
+
+\newcommand{\comment}[1]{}
+\theoremstyle{definition}
+\newtheorem*{defn}{Definition}
+\newtheorem*{exmp}{Example}
+\newtheorem*{prob}{Problem}
+
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+\newtheorem*{note}{Note}
+\newtheorem*{exer}{Exercise}
+
+\setlength{\oddsidemargin}{0.25 in}
+\setlength{\evensidemargin}{-0.25 in}
+\setlength{\topmargin}{-0.6 in}
+\setlength{\textwidth}{6.5 in}
+\setlength{\textheight}{8.5 in}
+\setlength{\headsep}{0.75 in}
+\setlength{\parindent}{0 in}
+\setlength{\parskip}{0.1 in}
+
+\newcommand{\widgraph}[2]{\includegraphics[keepaspectratio,width=#1]{#2}}
+\newcommand{\widgraphr}[3]{\includegraphics[keepaspectratio,width=#1,angle=#3]{#2}}
+
+\newcommand{\lecture}[4]{
+   \pagestyle{myheadings}
+   \thispagestyle{plain}
+   \newpage
+   \setcounter{page}{1}
+   \noindent
+   \begin{center}
+   \framebox{
+      \vbox{\vspace{2mm}
+    \hbox to 6.28in { {\bf Stat365/665 (Spring 2015) Data Mining and Machine Learning \hfill Lecture: #4} }
+       \vspace{6mm}
+       \hbox to 6.28in { {\Large \hfill #1  \hfill} }
+       \vspace{6mm}
+       \hbox to 6.28in { {\it Lecturer: #2 \hfill Scribe: #3} }
+      \vspace{2mm}}
+   }
+   \end{center}
+   \markboth{#1}{#1}
+   \vspace*{4mm}
+}
+
+
+%%%%%%%
+% Some commonly used notation
+%%%%%%%
+
+\def\R{{\mathbb R}}
+\def\X{{\mathcal X}}
+\def\Y{{\mathcal Y}}
+\def\H{{\mathcal H}}
+\def\E{{\mathbb E}}
+\def\sign{{\rm sign}}
+
+\newcommand{\percent}{$\%$}
+
+\begin{document}
+\large
+\begin{center}
+{\bf To Use or Not To Use PCA: Prediction Accuracy Comparsion between SVM with Diemnsionality Reduction and stand alone SVM}\\
+{\bf Computer Vision Term Project}\\
+{\bf Leon Lixing Yu}\\
+\vspace{.3in} 
+\end{center}
+\normalsize
+
+\section{Introduction}
+
+\end{document}
